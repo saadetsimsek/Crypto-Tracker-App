@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AD9D6152C75FEA500BEC3D9 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9D6142C75FEA500BEC3D9 /* APICaller.swift */; };
+		6AD9D6172C76047E00BEC3D9 /* CryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9D6162C76047E00BEC3D9 /* CryptoTableViewCell.swift */; };
+		6AD9D6192C76066F00BEC3D9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD9D6182C76066F00BEC3D9 /* Models.swift */; };
 		6AECA6572C74FFAD00564F53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AECA6562C74FFAD00564F53 /* AppDelegate.swift */; };
 		6AECA6592C74FFAD00564F53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AECA6582C74FFAD00564F53 /* SceneDelegate.swift */; };
 		6AECA65B2C74FFAD00564F53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AECA65A2C74FFAD00564F53 /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6AD9D6142C75FEA500BEC3D9 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		6AD9D6162C76047E00BEC3D9 /* CryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewCell.swift; sourceTree = "<group>"; };
+		6AD9D6182C76066F00BEC3D9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		6AECA6532C74FFAD00564F53 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AECA6562C74FFAD00564F53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AECA6582C74FFAD00564F53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +108,9 @@
 				6AECA6562C74FFAD00564F53 /* AppDelegate.swift */,
 				6AECA6582C74FFAD00564F53 /* SceneDelegate.swift */,
 				6AECA65A2C74FFAD00564F53 /* ViewController.swift */,
+				6AD9D6142C75FEA500BEC3D9 /* APICaller.swift */,
+				6AD9D6162C76047E00BEC3D9 /* CryptoTableViewCell.swift */,
+				6AD9D6182C76066F00BEC3D9 /* Models.swift */,
 				6AECA65C2C74FFAD00564F53 /* Main.storyboard */,
 				6AECA65F2C74FFAE00564F53 /* Assets.xcassets */,
 				6AECA6612C74FFAE00564F53 /* LaunchScreen.storyboard */,
@@ -261,6 +270,9 @@
 				6AECA65B2C74FFAD00564F53 /* ViewController.swift in Sources */,
 				6AECA6572C74FFAD00564F53 /* AppDelegate.swift in Sources */,
 				6AECA6592C74FFAD00564F53 /* SceneDelegate.swift in Sources */,
+				6AD9D6192C76066F00BEC3D9 /* Models.swift in Sources */,
+				6AD9D6172C76047E00BEC3D9 /* CryptoTableViewCell.swift in Sources */,
+				6AD9D6152C75FEA500BEC3D9 /* APICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
