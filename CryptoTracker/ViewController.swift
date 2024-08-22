@@ -8,8 +8,18 @@
 import UIKit
 //API Caller
 
-
 class ViewController: UIViewController {
+    
+    private var viewModels = [CryptoTableViewCellViewModel]()
+    
+    static let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = .current
+        formatter.allowsFloats = true
+        formatter.numberStyle = .currency
+        formatter.formatterBehavior = .default
+        return formatter
+    }()
     
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -24,10 +34,22 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        APICaller.shared.getAllCyrptoData { results in
+        APICaller.shared.getAllCyrptoData {[weak self] results in
             switch results {
             case .success(let models):
-                print(models.count)
+                self?.viewModels = models.compactMap({
+                    // NumberFormatter
+                    let price = $0.price_usd ?? 0
+                    let formatter = ViewController.numberFormatter
+                    let priceString = formatter.string(from: NSNumber(value: price))
+                    
+                    return CryptoTableViewCellViewModel(name: $0.name ?? "N/A",
+                                                 symbol: $0.asset_id,
+                                                 price: priceString ?? "N/A")
+                })
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
             case .failure(let error):
                 print("Error: \(error)")
             }
@@ -44,14 +66,18 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CryptoTableViewCell.identifier, for: indexPath) as? CryptoTableViewCell else{
             return UITableViewCell()
         }
-        cell.textLabel?.text = "Hello world"
+        cell.configure(with: viewModels[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 }
